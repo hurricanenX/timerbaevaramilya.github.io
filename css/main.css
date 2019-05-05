@@ -1,0 +1,96 @@
+body {
+	margin: 0;
+  	color: #888;
+  	font: 300 16px/22px "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header {
+	background: #FFFFFF;
+	height: 30vh;
+}
+
+main {
+	background: #9BB5A7;
+	height: 70vh;
+}
+
+a {
+  color: #39D4CC;
+  text-decoration: none;
+}
+
+footer {
+	background: #FFFFFF;
+	height: 30vh;
+}
+
+.logo {
+ 	position: relative; 
+	padding-left: 33%;
+	padding-top: 20px;
+}
+
+.logo img {
+	position: relative;
+	width: 50%;
+	height: 75px;
+}
+
+.container {
+	width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+/*
+div#rotator {
+	position:relative; 
+	height:70vh;
+}
+
+div#rotator img {
+	height: 70vh;
+	width: 100%;
+	position: absolute;
+	overflow: hidden;
+}
+
+div#rotator img.show {
+	z-index: 500;
+	position: absolute;
+}
+*/
+
+div#rotator {
+	width: 100%;
+	height: 70vh;
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+div#rotator img {
+	/*height: 70vh;*/
+	top: 0;
+	left: 0;
+	width: 100%;
+	position: absolute;
+}
+
+div#rotator img.show {
+	z-index: 500;
+	position: absolute;
+}
+/*
+.middle{
+  width:100%; 
+  height:50vh; 
+  display:block;
+  position:relative;
+  overflow:hidden;
+  }
+.middle img{
+  position:absolute; 
+  top:0; 
+  left:0; 
+  width:100%;
+  }*/

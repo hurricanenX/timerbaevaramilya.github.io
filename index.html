@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Timerbaeva Ramilya</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/footerstyle.css">
+	<!-- change that font, maybe add svg -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,100&subset=cyrillic,latin">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+	<header class="container">
+		<div class="logo">
+			<a href="index.html">
+				<img src="img/logo1.jpg" alt="Name">
+			</a>
+		</div>
+	</header>
+
+	<main>	
+		<div id="rotator" class="middle">
+			<img class="show" src="img/image1.jpg" alt="img1">
+			<img src="img/image2.jpg" alt="img2">
+			<img src="img/image3.jpg" alt="img3">
+		</div>
+	</main>
+	
+	<footer>
+		<div class="social">
+			<ul>
+				<li>
+					<a href="https://vk.com/id37280799" target="_blank">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<i class="fa fa-vk" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/ph.ramilya.timer/?hl=ru" target="_blank">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<i class="fa fa-instagram" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li>
+					<a href="#" target="_blank">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<i class="fa fa-google-plus" aria-hidden="true"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+</body>
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+ 
+<script type="text/javascript">
+ 
+function theRotator() {
+	// Устанавливаем прозрачность всех картинок в 0
+	$('div#rotator img').css({opacity: 0.0});
+ 
+	// Берем первую картинку и показываем ее (по пути включаем полную видимость)
+	$('div#rotator img:first').css({opacity: 1.0});
+ 
+	// Вызываем функцию rotate для запуска слайдшоу, 5000 = смена картинок происходит раз в 5 секунд
+	setInterval('rotate()',3000);
+}
+ 
+function rotate() {	
+	// Берем первую картинку
+	var current = ($('div#rotator img.show')?  $('div#rotator img.show') : $('div#rotator img:first'));
+ 
+	// Берем следующую картинку, когда дойдем до последней начинаем с начала
+	var next = ((current.next().length) ? ((current.next().hasClass('show')) ? $('div#rotator img:first') :current.next()) : $('div#rotator img:first'));	
+ 
+	// Расскомментируйте, чтобы показвать картинки в случайном порядке
+	// var sibs = current.siblings();
+	// var rndNum = Math.floor(Math.random() * sibs.length );
+	// var next = $( sibs[ rndNum ] );
+ 
+	// Подключаем эффект растворения/затухания для показа картинок, css-класс show имеет больший z-index
+	next.css({opacity: 0.0})
+	.addClass('show')
+	.animate({opacity: 1.0}, 1000);
+ 
+	// Прячем текущую картинку
+	current.animate({opacity: 0.0}, 1000)
+	.removeClass('show');
+};
+ 
+$(document).ready(function() {		
+	// Запускаем слайдшоу
+	theRotator();
+});
+ 
+</script>
+
+<script>
+	var conHeight = $("div#rotator ").height();
+	var imgHeight = $("div#rotator img").height();
+	var gap = (imgHeight - conHeight)/12;
+	$("div#rotator img").css("margin-top",-gap);
+</script>
+
+</html>
