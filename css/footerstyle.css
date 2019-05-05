@@ -4,13 +4,15 @@
 
 .social ul{
 	position: relative;
+	left: 33%;
+	width: 210px;
 	/*top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);*/
-	padding-left: 50px;
+	/*padding-left: 50px;
 	padding-right: 50px;
-	margin-left: 35%;
-	margin-right: 35%;
+	margin-left: 38%;
+	margin-right: 35%;*/
 	display: flex;
 	/*width: 50%;*/
 }
@@ -100,4 +102,22 @@ ul li a:hover span:nth-child(4){
 	transform: scaleY(1);
 	transform-origin: bottom;
 	transition: transform .5s;
+}
+
+@media (min-width: 1025px){
+	.social ul{
+		left: 30%;
+	}
+}
+
+@media (max-width: 1024) and (min-width: 769px){
+	.social ul{
+		left: 25%;
+	}
+}
+
+@media (min-width: 768px) {
+	.social ul{
+		left: 35%;
+	}
 }
